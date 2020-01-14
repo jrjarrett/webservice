@@ -30,7 +30,7 @@ public class EmailService {
 				final ObjectMapper mapper = new ObjectMapper();
 				@SuppressWarnings("unchecked")
 				final List<String> emails = mapper.readValue(request.body(), List.class);
-				logger.debug(String.format("The list is %s of size %d", emails, emails.size()));
+				logger.trace(String.format("The list is %s of size %d", emails, emails.size()));
 
 				final EmailParser parser = new EmailParser();
 				final Integer uniqueEmails = parser.count(emails);
